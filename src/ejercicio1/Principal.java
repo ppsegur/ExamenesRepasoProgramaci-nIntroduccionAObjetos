@@ -27,21 +27,28 @@ g) Buscar el corredor que menos ha tardado de todos (consideraremos que no hay d
 
 	public static void main(String[]args) {
 		String nombre, apellidos;
-		int dorsal,op,id =2, categoria, edad;
+		int dorsal,op, categoria, edad;
 		double tiempo;
 		int tam = 100;
+		int numCorredor = 0;
 		Corredor[] corredores = new Corredor[tam];
-		
+		 Carrera c = new Carrera(numCorredor,corredores);
 		System.out.println("Bienvenido al programa para la gestion del torneo de carreras municipales");
 		System.out.println("Contaremos como mucho con 100 corredores");
-		 Corredor c1 = new Corredor("Pepe", "Segura", 1,2, 20,1);
-		 Corredor c2 = new Corredor("Rafa", "Hernandez", 2, 1, 10,2);
+		 Corredor c1 = new Corredor("Pepe", "Segura", 1,2, 20);
+		 Corredor c2 = new Corredor("Rafa", "Hernandez", 2, 1, 10);
+		 c.agregarCorredor(c2);
+		c.agregarCorredor(c1);
 		
-		 Carrera c = new Carrera(2,corredores);
+		
 		do {
 			System.out.println("""
 								MENU DE CARRERAS
 					Pulse 1. Para agregar un corredor
+					Pulse 2. Para ver la lista de corredores
+					Pulse 3. Para calcular el tiempo en segundo de un corredor 
+					Pulsa 4. Para mostrar la lista de corredores de una categorría específica
+					Pulsa 5. Para cambiar el timepo de un corredor
 					""");
 			op = Leer.datoInt();
 			 switch (op) {
@@ -62,9 +69,28 @@ g) Buscar el corredor que menos ha tardado de todos (consideraremos que no hay d
 				
 				System.out.println("Diga si desea algun dorsal en específico");
 				dorsal = Leer.datoInt();
-				Corredor c3 = new Corredor (nombre, apellidos, dorsal, categoria, 0, id++);
+				System.out.println("Diga tiempo en minutos en terminar la maraton ");
+				tiempo = Leer.datoDouble();
+				Corredor c3 = new Corredor (nombre, apellidos, dorsal, categoria, tiempo);
 				
 				c.agregarCorredor(c3);
+				break;
+			case 2:
+			c.mostrarListaCorredores();
+				break;
+			case 3:
+				System.out.println("Diga el dorsal del corredor que quiere calcular");
+				dorsal = Leer.datoInt();
+				System.out.println("Su tiempo en segundos es de: "+c.calcularTiempo(dorsal));		
+				
+				break;
+			case 4:
+				System.out.println("Diga de que categoría quiere ver la lista de corredores (1.Juvenil, 2.Senior, 3 Veterano)");
+				categoria = Leer.datoInt();
+			c.mostrarLista(c.findByCategoria(categoria));
+			break;
+			case 5:
+				
 				break;
 			default:
 				break;

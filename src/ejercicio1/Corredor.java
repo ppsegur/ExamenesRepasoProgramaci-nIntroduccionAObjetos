@@ -14,7 +14,7 @@ de minutos con decimales, por ejemplo, el tiempo de un corredor puede ser 20.8 m
 	private int dorsal;
 	private int categoria;
 	private double tiempo;
-	private int id;
+	
 	/**
 	 * Constructor de la clase corredor 
 	 * @param nombre
@@ -23,14 +23,14 @@ de minutos con decimales, por ejemplo, el tiempo de un corredor puede ser 20.8 m
 	 * @param categoria
 	 * @param tiempo
 	 */
-	public Corredor(String nombre, String apellidos, int dorsal, int categoria, double tiempo,int id) {
+	public Corredor(String nombre, String apellidos, int dorsal, int categoria, double tiempo) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dorsal = dorsal;
 		this.categoria = categoria;
 		this.tiempo = tiempo;
-		this.id=id;
+	
 	}
 	//constructor vacio
 	public Corredor() {
@@ -71,17 +71,13 @@ de minutos con decimales, por ejemplo, el tiempo de un corredor puede ser 20.8 m
 	public void setTiempo(double tiempo) {
 		this.tiempo = tiempo;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+	
 	//To String 
 	@Override
 	public String toString() {
 		return "Corredor [nombre=" + nombre + ", apellidos=" + apellidos + ", dorsal=" + dorsal + ", categoria="
-				+ categoria + ", tiempo=" + tiempo + ", id=" +id + "]";
+				+ categoria + ", tiempo=" + tiempo +  "]";
 	}
 	
 }

@@ -2,6 +2,8 @@ package ejercicio1;
 
 import java.util.Arrays;
 
+
+
 public class Carrera {
 	/**
 	 * @atributos de la clase carrera
@@ -41,10 +43,68 @@ public class Carrera {
 		public String toString() {
 			return "Carrera [numCorredor=" + numCorredor + ", corredores=" + Arrays.toString(corredores) + "]";
 		}
+		//agregar
 		public void agregarCorredor(Corredor c) {
 			corredores[numCorredor] = c;
 			numCorredor++;
 		}
 		
-	
+		//Mostrar 
+		public void mostrarListaCorredores() {
+			for (int i = 0; i < numCorredor; i++) {
+				if(corredores[i]!=null) {
+				System.out.println(corredores[i]);
+				
+				}
+				
+				}
+				}
+		
+		//Buscar por dorsal 
+		public int findBydorsal (int dorsal) {
+			int i = 0;
+			boolean encontrado = false;
+			while (i<numCorredor&& !encontrado) {
+				Corredor delista = corredores[i];
+				if(delista.getDorsal()==dorsal) {
+					encontrado = true;
+				}else {
+					i++;
+				}
+				
+			}if(encontrado) {
+				return i;
+			}else {
+				return -1;
+			}
+		}
+		//Case 3 metodo para pasar de minutos a segundos 
+		public double calcularTiempo(int dorsal) {
+			int  index = findBydorsal(dorsal);
+			int segundos = 60;
+			double tiempoSegundos = corredores[index].getTiempo()* segundos;
+			return tiempoSegundos;
+			
+		}
+	//Buscar por categoria 
+		public Corredor[] findByCategoria(int categoria) {
+			int index = 0;
+			Corredor[] listaCategoria = new Corredor[numCorredor];
+		while(index<numCorredor) {
+			if(corredores[index].getCategoria()==categoria) {
+				listaCategoria[index] =corredores[index]; 
+			}
+			index++;
+		}
+			return listaCategoria;
+		}
+		//Mostar lista
+		public void mostrarLista(Corredor [] lista) {
+			for (int i = 0; i < lista.length; i++) {
+				if(lista[i]!=null) {
+					System.out.println(lista[i]);
+				}
+			}
+			
+			}
 }
