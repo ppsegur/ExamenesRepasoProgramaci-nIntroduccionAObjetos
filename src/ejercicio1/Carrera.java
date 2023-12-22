@@ -57,8 +57,8 @@ public class Carrera {
 				
 				}
 				
-				}
-				}
+			}
+		}
 		
 		//Buscar por dorsal 
 		public int findBydorsal (int dorsal) {
@@ -98,8 +98,8 @@ public class Carrera {
 		}
 			return listaCategoria;
 		}
-		//Mostar lista
-		public void mostrarLista(Corredor [] lista) {
+		//Mostar lista Este método sirve para mostarr cualquier lista que se le pase como paramentro 
+		public void mostrarLista(Corredor[] lista  ) {
 			for (int i = 0; i < lista.length; i++) {
 				if(lista[i]!=null) {
 					System.out.println(lista[i]);
@@ -107,4 +107,9 @@ public class Carrera {
 			}
 			
 			}
+		public void modificarTiempo(int dorsal,int tiempoNuevo) {
+			for (int i = 0; i < corredores.length; i++) {
+				
+			}
+		}
 }

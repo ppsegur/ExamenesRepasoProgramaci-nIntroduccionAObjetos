@@ -38,7 +38,8 @@ g) Buscar el corredor que menos ha tardado de todos (consideraremos que no hay d
 		 Corredor c1 = new Corredor("Pepe", "Segura", 1,2, 20);
 		 Corredor c2 = new Corredor("Rafa", "Hernandez", 2, 1, 10);
 		 c.agregarCorredor(c2);
-		c.agregarCorredor(c1);
+		 c.agregarCorredor(c1);
+		dorsal = 2;
 		
 		
 		do {
@@ -49,6 +50,8 @@ g) Buscar el corredor que menos ha tardado de todos (consideraremos que no hay d
 					Pulse 3. Para calcular el tiempo en segundo de un corredor 
 					Pulsa 4. Para mostrar la lista de corredores de una categorría específica
 					Pulsa 5. Para cambiar el timepo de un corredor
+					Pulse 6. Para calcular la media de tiempo
+					Pu
 					""");
 			op = Leer.datoInt();
 			 switch (op) {
@@ -90,8 +93,18 @@ g) Buscar el corredor que menos ha tardado de todos (consideraremos que no hay d
 			c.mostrarLista(c.findByCategoria(categoria));
 			break;
 			case 5:
-				
+				System.out.println("Diga el dorsal del corredor al que quiere modificar su tiempo");
+				dorsal= Leer.datoInt();
+				c.findBydorsal(dorsal);
+				System.out.println("Dia el nuevo tiempo ");
+				double tiempoNuevo = Leer.datoDouble();
 				break;
+			case 6:
+				System.out.println("diga el numero de kms que tendia la carrera");
+				double recorrido = Leer.datoDouble();
+				System.out.println("Y el dorsal del corredor ");
+				c.
+			break;
 			default:
 				break;
 			}
