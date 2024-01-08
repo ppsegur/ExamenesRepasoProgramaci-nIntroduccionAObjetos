@@ -78,6 +78,14 @@ public class Carrera {
 				return -1;
 			}
 		}
+		/**
+	*
+		* @author segura.rojos23_trian
+		* @param dorsal
+		* @return tiempoSegundos
+		*
+		**/
+		
 		//Case 3 metodo para pasar de minutos a segundos 
 		public double calcularTiempo(int dorsal) {
 			int  index = findBydorsal(dorsal);
